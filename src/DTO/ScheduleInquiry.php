@@ -20,7 +20,7 @@ class ScheduleInquiry
         public readonly int $installmentsNum,
 
         #[Assert\NotBlank]
-        public readonly string $interestRate,
+        public readonly float $interestRate,
     ) {}
 
     #[Assert\Callback]
