@@ -16,7 +16,7 @@ class ScheduleService
         $subResult1 = $r / $k;
         $subResult2 = pow(1 + $subResult1, $n);
         $subResult3 = ($subResult1 * $subResult2) / ($subResult2 - 1);
-        $installmentAmount = bcmul($scheduleInquiry->amount, $subResult3, 2);
+        $installmentAmount = round($scheduleInquiry->amount * $subResult3 * 100) / 100;
         do {
             $nr++;
             $schedule[$nr] = [
